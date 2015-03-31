@@ -1,5 +1,5 @@
 class ListController < ApplicationController
-  respond_to :json
+  respond_to :json # Telling the controller that it can except incoming data in JSON format.
   def index
   end
 
