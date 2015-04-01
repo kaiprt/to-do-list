@@ -7,7 +7,7 @@
 <div id="main-container" class="container">
   <div id="left-container"class="container pull-left">
     <form id="create-list">
-      <h1>Creat a To Do List</h1>
+      <h1>Create a To-Do List</h1>
       <div class="form-group">
         <label for="input-list-name">List Name:</label>
         <input class="form-control" type="text" name="listName" id="input-list-name" placeholder="Name" required>
@@ -16,34 +16,34 @@
         <label for="input-list-description">Description: </label>
         <input class="form-control" type="text" name="listDescription" id="input-list-description" placeholder="Description">
       </div>
-      <button id="listSubmit" class="btn btn-default" type="submit">Create</button>
+      <button id="listSubmit" class="btn btn-default btn-lg btn-block" type="submit">Create</button>
 
     </form>
 
     <form id="create-task">
-      Name:<br>
-      <input type="text" name="name">
-      <br>
-      Description:<br>
-      <input type="text" name="description">
-      <br>
-      Due Date/Time:<br>
-      <input type="text" name="dueDate">
-      <br>
-      Date Created:<br>
-      <input type="text" name="dateCreated">
-      <br>
+      <div class="form-group">
+        <label for="input-task-description">Name:</label>
+        <input id="" class="form-control" type="text" name="taskName" placeholder="Task">
+      </div>
+      <div class="form-group">
+        <label for="input-task-description">Description:</label>
+        <input id="" class="form-control" type="text" name="taskDescription" placeholder="Description">
+      </div>
+      <div class="form-group">
+        <label for="input-task-due"> Due Date/Time:</label>
+        <input id="" class="form-control" type="datetime" name="dueDate">
+      </div>
       <button id="submit">Submit</button>
     </form>
   </div>
   <div id="right-container" class="container pull-right">
     <div class="page-header text-center">
       <h2>Your Lists</h2>
-      <ul id="my-lists" class="list-group">
-        <% @lists.each do |list| %>
-          <li class="list-group-item"><%= list.name %><span class="glyphicon glyphicon-zoom-in pull-right"></span></li>
-        <% end %>
-      </ul>
     </div>
+    <ul id="my-lists" class="list-group">
+      <% @lists.each do |list| %>
+        <li class="list-group-item"><%= list.name %><a id="view-list-icon" class="glyphicon glyphicon-zoom-in pull-right" href="/lists/<%= list.id %>"></a></li>
+      <% end %>
+    </ul>
   </div>
 </div>

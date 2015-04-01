@@ -5,7 +5,7 @@ class ListController < ApplicationController
   end
 
   def view
-    ToDo.find_by_id(params[:id])
+    @current_list = ToDo.find_by_id(params[:id])
   end
 
   def save_list

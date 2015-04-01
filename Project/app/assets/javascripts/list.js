@@ -14,7 +14,7 @@ $(document).ready(function(){
       console.log(response)
       var newList = response.new_list;
       alertify.success("Success notification");
-      $('<li class="list-group-item">'+ newList.name +'</li>').appendTo($("#my-lists")).slideDown("slow");
+      $('<li class="list-group-item">'+ newList.name +'<a id="view-list-icon" class="glyphicon glyphicon-zoom-in pull-right" href="/lists/'+ newList.id +'"></a></li>').appendTo($("#my-lists")).slideDown("slow");
     }).fail(function(response){
       alertify.error("List was not created!");
     });
