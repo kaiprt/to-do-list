@@ -11,8 +11,12 @@ $(document).ready(function(){
       dataType: "json"
     }).success(function(response){
       $("#create-task").slideDown();
+      console.log(response)
+      var newList = response.new_list;
+      alertify.success("Success notification");
+      $('<li class="list-group-item">'+ newList.name +'</li>').appendTo($("#my-lists")).slideDown("slow");
     }).fail(function(response){
-      alert("List was not created!");
+      alertify.error("List was not created!");
     });
   });
 

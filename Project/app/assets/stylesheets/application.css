@@ -13,10 +13,13 @@
  *= require_tree .
  *= require_self
  */
-
 /* This class makes elements not "highlightable. I am writing it in this file so
  it is available on every page we make."*/
- .noselect {
+html, body{
+  height: 95%;
+  width: 100%;
+}
+.noselect {
      -webkit-touch-callout: none;
      -webkit-user-select: none;
      -khtml-user-select: none;

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/viewlists' => 'list#view_lists'
 
+  get '/lists/:id' => 'list#view'
+
   # Example of regular route:
     # get 'products/:id' => 'catalog#view'
 
